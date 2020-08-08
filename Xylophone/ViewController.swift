@@ -20,6 +20,7 @@ class ViewController: UIViewController {
 
     @IBAction func keyPressed(_ sender: UIButton) {
         playSound(note: sender.titleLabel?.text)
+        blurify(sender)
     }
     
     func playSound(note: String?) {
@@ -38,6 +39,14 @@ class ViewController: UIViewController {
             player.play()
         } catch let error {
             print(error.localizedDescription)
+        }
+    }
+    
+    func blurify(_ button: UIButton){
+        button.alpha = 0.5
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            button.alpha = 1.0
         }
     }
     
