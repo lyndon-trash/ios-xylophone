@@ -15,7 +15,9 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func keyPressed(_ sender: UIButton) {
+        print("Pressed: \(sender.titleLabel?.text! ?? "Unknown")")
+    }
     
-
 }
 
